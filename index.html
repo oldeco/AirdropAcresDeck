@@ -11,72 +11,56 @@
             font-family: Arial, sans-serif;
             background: radial-gradient(circle at center, #00ff99 0%, #001a00 60%, #000000 100%);
             color: white;
+        }
+
+        .page-container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 100%;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 600px;
-            height: 600px;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(0,255,128,0.3) 0%, transparent 70%);
-            filter: blur(100px);
-            z-index: -1;
-        }
-
-        .content {
-            z-index: 1;
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 24px;
-            color: #f9a825;
-            font-weight: 600;
+        .header {
             margin-bottom: 20px;
         }
 
-        .subtext {
-            font-size: 18px;
-            color: #ddd;
-            margin-bottom: 40px;
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
         }
 
-        .button {
-            padding: 14px 28px;
-            background-color: #00e676;
-            color: #000;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s;
+        .header p {
+            margin: 10px 0 0;
+            font-size: 16px;
+            color: #ccc;
         }
 
-        .button:hover {
-            background-color: #00c853;
+        .pdf-container {
+            width: 80%;
+            height: 80%;
+            box-shadow: 0 0 30px rgba(0, 255, 128, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .pdf-embed {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Airdrop Acres</h1>
-        <div class="tagline">Automating Airdrop Discovery & Management</div>
-        <div class="subtext">Your Gateway to a Simplified Airdrop Experience</div>
-        <a class="button" href="AirdropAcres___Pitchdeck.pptx.pdf" target="_blank">View Pitch Deck</a>
+    <div class="page-container">
+        <div class="header">
+            <h1>Airdrop Acres Deck</h1>
+            <p>Scroll or zoom to view the full presentation</p>
+        </div>
+        <div class="pdf-container">
+            <embed src="AirdropAcres___Pitchdeck.pptx.pdf" type="application/pdf" class="pdf-embed">
+        </div>
     </div>
 </body>
 </html>

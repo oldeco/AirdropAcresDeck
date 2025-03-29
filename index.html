@@ -9,50 +9,73 @@
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
-            background: #111;
+            background: radial-gradient(circle at center, #00ff99 0%, #001a00 60%, #000000 100%);
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(0,255,128,0.3) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: -1;
         }
 
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
         }
 
         h1 {
             font-size: 48px;
-            margin: 0;
+            margin-bottom: 10px;
         }
 
-        p {
+        .tagline {
+            font-size: 24px;
+            color: #f9a825;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .subtext {
             font-size: 18px;
-            margin: 0;
+            color: #ddd;
+            margin-bottom: 40px;
         }
 
-        a.button {
-            margin-top: 20px;
-            padding: 12px 24px;
+        .button {
+            padding: 14px 28px;
             background-color: #00e676;
-            color: black;
-            text-decoration: none;
+            color: #000;
             font-weight: bold;
+            text-decoration: none;
             border-radius: 8px;
+            transition: background 0.3s;
         }
 
-        a.button:hover {
+        .button:hover {
             background-color: #00c853;
         }
     </style>
 </head>
 <body>
     <div class="content">
-        <h1>AIRDROP ACRES DECK</h1>
-        <p>Click below to view the deck</p>
+        <h1>Airdrop Acres</h1>
+        <div class="tagline">Automating Airdrop Discovery & Management</div>
+        <div class="subtext">Your Gateway to a Simplified Airdrop Experience</div>
         <a class="button" href="AirdropAcres___Pitchdeck.pptx.pdf" target="_blank">View Pitch Deck</a>
     </div>
 </body>
